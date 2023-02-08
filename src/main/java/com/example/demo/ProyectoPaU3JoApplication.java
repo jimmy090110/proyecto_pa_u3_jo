@@ -30,7 +30,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 		estudiante.setCiudad("Quito");
 		this.estudianteService.crear(estudiante); */
 	
-		/*System.out.println("Busqueda por TypedQuery");
+		System.out.println("Busqueda por TypedQuery");
 		Estudiante estudiante1=this.estudianteService.buscarPorNombreTypedQuery("Jimmy");
 		System.out.println(estudiante1);
 		System.out.println("Busqueda por NamedQuery");
@@ -43,7 +43,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 		
 		System.out.println("Busqueda por NamedNativeQuery");
 		Estudiante estudiante4=this.estudianteService.buscarPorNombreNativeQuery("Jimmy");
-		System.out.println(estudiante4); */
+		System.out.println(estudiante4); 
 		
 		
 		//System.out.println("Busqueda por TypedQueryList");

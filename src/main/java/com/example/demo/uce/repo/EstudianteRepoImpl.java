@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.uce.modelo.Estudiante;
+import com.example.demo.uce.modelodto.EstudianteDTO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -77,6 +78,15 @@ public class EstudianteRepoImpl implements IEstudianteRepo {
 		TypedQuery<Estudiante> myQuery = this.entityManager.createNamedQuery("Estudiante.buscarPorNombreNative", Estudiante.class);
 		myQuery.setParameter("datoNombre", nombre);
 		return myQuery.getSingleResult();
+	}
+
+	@Override
+	public EstudianteDTO buscarPorNombreTypedQueryDTO(String nombre) {
+		// TODO Auto-generated method stub
+		TypedQuery<EstudianteDTO> myTypedQuery = this.entityManager
+				.createQuery("select NEW EstudianteDTO(E.cedulaNOMBRE, e.apellido, e.cedula) from Estudiante e where e.nombre=:datoNombre",Estudiante.class);
+		myTypedQuery.setParameter("datoNombre", nombre);
+		return myTypedQuery.getSingleResult();
 	}
 
 	/*

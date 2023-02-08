@@ -14,7 +14,15 @@ public class EstudianteDTO {
 		 
 	 }
 	
+	 
 	
+	@Override
+	public String toString() {
+		return "EstudianteDTO [nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + "]";
+	}
+
+
+
 	public EstudianteDTO(String nombre, String apellido, String cedula) {
 		super();
 		this.nombre = nombre;
