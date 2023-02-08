@@ -1,65 +1,78 @@
 package com.example.demo.uce.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.uce.modelo.Estudiante;
 import com.example.demo.uce.repo.IEstudianteRepo;
-
 @Service
 public class EstudianteServiceImpl implements IEstudianteService{
-	
 	@Autowired
-	private IEstudianteRepo estudianteRepo;
-
+	private IEstudianteRepo iEstudianteRepo;
 	@Override
 	public Estudiante buscarNombre(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarNombreQuery(nombre);
+		return this.iEstudianteRepo.buscarPorNombreQuery(nombre);
 	}
 
 	@Override
 	public Estudiante buscarApellido(String apellido) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarApellidoQuery(apellido);
+		return this.iEstudianteRepo.buscarPorApellidoQuery(apellido);
 	}
 
 	@Override
-	public Estudiante buscarGenero(String genero) {
+	public void crear(Estudiante estudiante) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarGeneroQuery(genero);
+		this.iEstudianteRepo.insertar(estudiante);
+	}
+
+
+	@Override
+	public Estudiante buscarPorNombreTypedQuery(String nombre) {
+		// TODO Auto-generated method stub
+		return this.iEstudianteRepo.buscarPorNombreTypedQuery(nombre);
 	}
 
 	@Override
-	public Estudiante buscarCedula(String cedula) {
+	public Estudiante buscarPorNombreNamedQuery(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarCedulaQuery(cedula);
+		return this.iEstudianteRepo.buscarPorNombreNamedQuery(nombre);
 	}
 
 	@Override
-	public Estudiante buscarCiudad(String ciudad) {
+	public Estudiante buscarPorNombreNamedQueryTyped(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarCiudadQuery(ciudad);
+		return this.iEstudianteRepo.buscarPorNombreNamedQueryTyped(nombre);
 	}
 
 	@Override
-	public Estudiante buscarPorNombreQuery(String apellido) {
+	public Estudiante buscarPorNombreNativeQuery(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarPorNombreQueryTyped(apellido);
+		return this.iEstudianteRepo.buscarPorNombreNativeQuery(nombre);
 	}
 
 	@Override
-	public Estudiante buscarPorNombreNamedQuer(String nombre) {
+	public Estudiante buscarPorNombreNativeQueryTypedNamed(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarPorNombreNamedQuery(nombre);
+		return this.iEstudianteRepo.buscarPorNombreNativeQueryTypedNamed(nombre);
+	}
+	/*
+	@Override
+	public List<Estudiante> buscarPorNombreTypedQueryList(String nombre) {
+		// TODO Auto-generated method stub
+		return this.iEstudianteRepo.buscarPorNombreQueryList(nombre);
 	}
 
 	@Override
-	public Estudiante buscarPorNombreNamedQuerTyped(String nombre) {
+	public List<Estudiante> buscarPorNombreTypedQueryList2(String nombre) {
 		// TODO Auto-generated method stub
-		return this.estudianteRepo.buscarPorNombreNamedQueryTyped(nombre);
+		return this.iEstudianteRepo.buscarPorNombreQueryList2(nombre);
 	}
-	
+	*/
+
 
 
 
