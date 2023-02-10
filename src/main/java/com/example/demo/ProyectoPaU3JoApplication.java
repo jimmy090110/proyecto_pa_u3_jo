@@ -4,30 +4,22 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.modelo.Cliente;
-import com.example.demo.modelo.Renta;
-import com.example.demo.modelo.Vehiculo;
-import com.example.demo.service.IClienteService;
 
-import com.example.demo.service.IRentaService;
-import com.example.demo.service.IVehiculoService;
+import com.example.demo.modelo.Automovil;
+import com.example.demo.service.IAutomovilService;
+
 
 @SpringBootApplication
 public class ProyectoPaU3JoApplication implements CommandLineRunner{
 
 	@Autowired
-	private IClienteService clienteService;
-	
-	@Autowired
-	private IVehiculoService vehiculoService;
-	
-	@Autowired
-	private IRentaService rentaService;
+	private IAutomovilService automovilService;
 	
 	
 	public static void main(String[] args) {
@@ -39,27 +31,44 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner{
 		// TODO Auto-generated method stub
 		
 	
-		List<Renta> renta=new ArrayList<>();
-		Vehiculo vehiculo=new Vehiculo();
-		vehiculo.setId(1);
-		vehiculo.setCategoria("Deportivo");
-		vehiculo.setPlaca("ASD123");
-		vehiculo.setPrecioDia(new BigDecimal(18));
+	/*Automovil auto = new Automovil();
+	auto.setAnio("2020");
+	auto.setCategoria("B");
+	auto.setColor("verde");
+	auto.setId(1);
+	auto.setMarca("Mazda");
+	auto.setMotor("V6");
+	auto.setPlaca("PXY123");
+	auto.setPrecio(new BigDecimal(10000));
+	this.automovilService.insertar(auto);
+	*/
+	
+	
+	//TypedQuery
+	System.out.println(this.automovilService.buscarPorColorTypedQuery("verde"));
+	System.out.println(this.automovilService.buscarPorMarcaTypedQuery("Mazda"));
+	System.out.println(this.automovilService.buscarPorPlacaTypedQuery("PXY123"));
+	
+	//NamedQuery
+	System.out.println(this.automovilService.buscarPorColorNamedQuery("verde"));
+	System.out.println(this.automovilService.buscarPorMarcaNamedQuery("Mazda"));
+	System.out.println(this.automovilService.buscarPorPlacaNamedQuery("PXY123"));
+	
+	//NativeQuery
+	System.out.println(this.automovilService.buscarPorColorNativeQuery("verde"));
+	System.out.println(this.automovilService.buscarPorMarcaNativeQuery("Mazda"));
+	System.out.println(this.automovilService.buscarPorPlacaNativeQuery("PXY123"));
+	
 		
-		Cliente cli=new Cliente();
-		cli.setId(1);
-		cli.setNombre("Jimmy");
-		cli.setApellido("Ortega");
-		cli.setCedula("105966337");
-		cli.setTarjetaCredito("1111111");
-		
-		this.vehiculoService.insertar(vehiculo);
-		this.clienteService.insertar(cli);
-		
-		Renta rentas=this.rentaService.insertarRenta("ASD123", "105966337");
-		renta.add(rentas);
-		cli.setRenta(renta);
-		vehiculo.setRenta(renta);
+	//NamedNativeQuery
+	System.out.println(this.automovilService.buscarPorColorNamedNativeQuery("verde"));
+	System.out.println(this.automovilService.buscarPorMarcaNamedNativeQuery("Mazda"));
+	System.out.println(this.automovilService.buscarPorPlacaNamedNativeQuery("PXY123"));
+	
+	
+	
+	
+	
 	
 		
 		
