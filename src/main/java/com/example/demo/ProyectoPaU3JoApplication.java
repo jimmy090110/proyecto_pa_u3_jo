@@ -23,37 +23,38 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
+		
 		/*Estudiante estudiante =new Estudiante();
-		estudiante.setNombre("Jimmy");
-		estudiante.setApellido("Ortega");
-		estudiante.setCedula("105966337");
+		estudiante.setNombre("Juan");
+		estudiante.setApellido("Perez");
+		estudiante.setCedula("1718903778");
 		estudiante.setCiudad("Quito");
-		this.estudianteService.crear(estudiante); */
+		estudiante.setGenero("M");
+		estudiante.setId(1);
+		this.estudianteService.insertar(estudiante);
+		/*
+		
+		
+		
+		
 	
-		System.out.println("Busqueda por TypedQuery");
-		Estudiante estudiante1=this.estudianteService.buscarPorNombreTypedQuery("Jimmy");
-		System.out.println(estudiante1);
-		System.out.println("Busqueda por NamedQuery");
-		Estudiante estudiante2=this.estudianteService.buscarPorNombreNamedQuery("Jimmy");
-		System.out.println(estudiante2);
-		System.out.println("Busqueda por NamedQueryTyped");
-		Estudiante estudiante3=this.estudianteService.buscarPorNombreNamedQueryTyped("Jimmy");
-		System.out.println(estudiante3);
 		
+		/*System.out.println("Busqueda de un EstudianteDTO: ");
+		System.out.println(this.estudianteService.buscarPorNombreTypeQueryDTO("Jimmy"));
+
+		System.out.println("Busqueda de Estudiante por Criteria API Query:");
+		System.out.println(this.estudianteService.buscarPorNombreCriteria("Jimmy"));
+
+		System.out.println("Busqueda de Estudiante por Criteria API Query con AND y OR:");
+		System.out.println(this.estudianteService.buscarPorNombreCriteriaAndOr("Jimmy", "Ortega", "M"));
+		*/
 		
-		System.out.println("Busqueda por NamedNativeQuery");
-		Estudiante estudiante4=this.estudianteService.buscarPorNombreNativeQuery("Jimmy");
-		System.out.println(estudiante4); 
+		//System.out.println("Eliminacion por Apellido");
+		//System.out.println(this.estudianteService.eliminarPorApellido("Ortega"));
 		
-		
-		//System.out.println("Busqueda por TypedQueryList");
-		//Estudiante estudiante1=(Estudiante) this.estudianteService.buscarPorNombreTypedQueryList("Jimmy");
-		
-		//System.out.println("Busqueda por TypedQueryList");
-		//Estudiante estudiante=(Estudiante) this.estudianteService.buscarPorNombreTypedQueryList2("Jimmy");
-		//System.out.println(estudiante);
-		
-		
+		//System.out.println("actualizacion por Apellido");
+		//System.out.println(this.estudianteService.actualizarPorApellido("Ortega", "Pedro"));
+
 		
 		
 	}
