@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.modelo.Automovil;
 import com.example.demo.service.IAutomovilService;
+import com.example.demo.service.IHotelService;
 
 
 @SpringBootApplication
@@ -20,6 +21,9 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner{
 
 	@Autowired
 	private IAutomovilService automovilService;
+	
+	@Autowired
+	private IHotelService hotelService;
 	
 	
 	public static void main(String[] args) {
@@ -43,7 +47,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner{
 	this.automovilService.insertar(auto);
 	*/
 	
-	
+	/*	
 	//TypedQuery
 	System.out.println(this.automovilService.buscarPorColorTypedQuery("verde"));
 	System.out.println(this.automovilService.buscarPorMarcaTypedQuery("Mazda"));
@@ -65,14 +69,13 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner{
 	System.out.println(this.automovilService.buscarPorMarcaNamedNativeQuery("Mazda"));
 	System.out.println(this.automovilService.buscarPorPlacaNamedNativeQuery("PXY123"));
 	
+	*/
+	
+	System.out.println(this.hotelService.modificarPorNombre("Las Palmeras", "10 de agosto"));
+	System.out.println(this.hotelService.borrarPorNombre("Hilton Colon"));
 	
 	
 	
-	
-	
-		
-		
-		
 	
 		
 		

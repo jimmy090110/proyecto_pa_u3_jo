@@ -34,5 +34,6 @@ public interface IAutomovilRepo {
 		public List<Automovil> buscarPorMarcaNamedNativeQuery(String marca);
 		public List<Automovil> buscarPorPlacaNamedNativeQuery(String placa);
 		
+		
 
 }
