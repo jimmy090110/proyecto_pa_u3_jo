@@ -1,10 +1,10 @@
-package com.example.demo.uce.repo;
+package com.example.demo.uce.service;
 
 import java.util.List;
 
 import com.example.demo.uce.modelo.Hotel;
 
-public interface IHotelRepo {
+public interface IHotelService {
 	
 	public List<Hotel>buscarHotelInnerJoin(String tipoHabitacion);
 	public List<Hotel>buscarloHotelLeftJoin(String tipoHabitacion);
