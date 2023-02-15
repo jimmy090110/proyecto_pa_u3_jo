@@ -50,14 +50,26 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 			
 		}
 		
-		/*
+		
 		List<Habitacion> listah= this.habitacionService.buscarHabitacionOuterLeftJoin();
 		for (Habitacion ha : listah) {
 			System.out.println(ha.getNumero());
 			
 		}
 		
-		*/
+		
+		List<Habitacion> listah2= this.habitacionService.buscarHabitacionOuterRigtJoin();
+		for (Habitacion ha : listah2) {
+			System.out.println(ha.getNumero());
+			if(ha!=null) {
+				System.out.println(ha.getNumero());
+			}
+			
+		}
+		
+		
+		
+		
 		/*List<Hotel>lista = this.hotelService.buscarHotelInnerJoin("VIP");
 		for(Hotel h:lista) {
 			System.out.println(h.getNombre());
