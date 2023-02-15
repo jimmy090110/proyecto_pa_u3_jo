@@ -28,7 +28,7 @@ public class Hotel {
 	@Column(name="hote_direccion")
 	private String direccion;
 	
-	@OneToMany(mappedBy = "hotel",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "hotel",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Habitacion> habitacion;
 	
 

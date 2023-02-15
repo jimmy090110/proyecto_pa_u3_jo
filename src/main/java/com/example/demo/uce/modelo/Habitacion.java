@@ -36,6 +36,14 @@ public class Habitacion {
 		return id;
 	}
 
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -51,9 +59,11 @@ public class Habitacion {
 	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;
 	}
+
 	@Override
 	public String toString() {
-		return "Habitacion [id=" + id + ", numero=" + numero + "]";
+		return "Habitacion [id=" + id + ", numero=" + numero + ", tipo=" + tipo + ", hotel=" + hotel + "]";
 	}
+	
 	
 }

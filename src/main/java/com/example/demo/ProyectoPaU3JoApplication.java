@@ -13,12 +13,16 @@ import com.example.demo.uce.modelo.Estudiante;
 import com.example.demo.uce.modelo.Habitacion;
 import com.example.demo.uce.modelo.Hotel;
 import com.example.demo.uce.service.IEstudianteService;
+import com.example.demo.uce.service.IHabitacionService;
 import com.example.demo.uce.service.IHotelService;
 
 @SpringBootApplication
 public class ProyectoPaU3JoApplication implements CommandLineRunner {
 	@Autowired
 	private IHotelService hotelService;
+	
+	@Autowired
+	private IHabitacionService habitacionService;
 	
 	
 	public static void main(String[] args) {
@@ -28,8 +32,8 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		
-		/*Estudiante estudiante =new Estudiante();
+		/*
+		Estudiante estudiante =new Estudiante();
 		estudiante.setNombre("Juan");
 		estudiante.setApellido("Perez");
 		estudiante.setCedula("1718903778");
@@ -39,7 +43,22 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 		this.estudianteService.insertar(estudiante);
 		/*
 		 */
-		List<Hotel>lista = this.hotelService.buscarHotelInnerJoin("VIP");
+		
+		List<Hotel> lista= this.hotelService.buscarHotelOuterLeftJoin();
+		for (Hotel h : lista) {
+			System.out.println(h.getNombre());
+			
+		}
+		
+		/*
+		List<Habitacion> listah= this.habitacionService.buscarHabitacionOuterLeftJoin();
+		for (Habitacion ha : listah) {
+			System.out.println(ha.getNumero());
+			
+		}
+		
+		*/
+		/*List<Hotel>lista = this.hotelService.buscarHotelInnerJoin("VIP");
 		for(Hotel h:lista) {
 			System.out.println(h.getNombre());
 			for(Habitacion ha : h.getHabitacion()) {
@@ -48,7 +67,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 			System.out.println();
 		}
 		
-		List<Hotel>lista2 = this.hotelService.buscarloHotelLeftJoin("VIP");
+		List<Hotel>lista2 = this.hotelService.buscarloHotelJoinFech("VIP");
 		for(Hotel h:lista2) {
 			System.out.println(h.getNombre());
 			for(Habitacion ha : h.getHabitacion()) {

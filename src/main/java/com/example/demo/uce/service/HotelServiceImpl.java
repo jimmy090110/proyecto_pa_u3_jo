@@ -22,28 +22,29 @@ public class HotelServiceImpl implements IHotelService {
 	}
 	
 	@Override
-	public List<Hotel> buscarloHotelLeftJoin(String tipoHabitacion) {
+	public List<Hotel> buscarloHotelJoinFech(String tipoHabitacion) {
 		// TODO Auto-generated method stub
-		return this.hotelRepo.buscarloHotelLeftJoin(tipoHabitacion);
+		return this.hotelRepo.buscarloHotelJoinFech(tipoHabitacion);
+	}
+
+
+
+	@Override
+	public List<Hotel> buscarHotelOuterLeftJoin() {
+		// TODO Auto-generated method stub
+		return this.hotelRepo.buscarHotelOuterLeftJoin();
 	}
 
 	@Override
-	public List<Hotel> bucarHotelRighJoin(String tipoHabitacion) {
+	public List<Hotel> buscarHotelOuterRigtJoin() {
 		// TODO Auto-generated method stub
-		return this.hotelRepo.bucarHotelRighJoin(tipoHabitacion);
-		
+		return this.hotelRepo.buscarHotelOuterRigtJoin();
 	}
 
 	@Override
-	public List<Hotel> buscarHotelFullJoin(String tipoHabitacion) {
+	public List<Hotel> buscarHotelOuterFullJoin() {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Hotel> buscarHotelOuterJoin(String tipoHabitacion) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.hotelRepo.buscarHotelOuterFullJoin();
 	}
 
 	
