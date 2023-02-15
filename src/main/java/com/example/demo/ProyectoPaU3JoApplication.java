@@ -57,7 +57,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 			
 		}
 		
-		
+		/*
 		List<Habitacion> listah2= this.habitacionService.buscarHabitacionOuterRigtJoin();
 		for (Habitacion ha : listah2) {
 			System.out.println(ha.getNumero());
@@ -66,6 +66,7 @@ public class ProyectoPaU3JoApplication implements CommandLineRunner {
 			}
 			
 		}
+		*/
 		
 		
 		
